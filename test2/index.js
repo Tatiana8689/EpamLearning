@@ -4,7 +4,7 @@ const debounce = (func, delay) => {
   let timeout;
 
   return function () {
-    const debouncedFunc = () => func.apply(arguments);
+    const debouncedFunc = () => func(...arguments);
     
     clearTimeout(timeout);
     timeout = setTimeout(debouncedFunc, delay);
